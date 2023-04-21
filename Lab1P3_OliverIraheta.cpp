@@ -12,7 +12,7 @@ int main() {
         if (i == 1) {
             int n;
             double x1, s1=0.0, e1;
-            float x2, s2=0.0, e2;
+            float x2, s2=0.0f, e2;
             long double x3, s3=0.0, e3;
          
             cout << "Ingrese valor N -> ";
@@ -32,6 +32,13 @@ int main() {
             e2 = 1 - s2;
             e3 = 1 - s3;
             
+            if (e1 < 0) {
+                e1 *= -1;
+            }if (e2 < 0) {
+                e2 *= -1;
+            }if (e3 < 0) {
+                e3 *= -1;
+            }
             cout << "Usando el double: \n";
             cout << "E = " << e1 << endl;
             cout << "Usando el float: \n";
@@ -40,7 +47,19 @@ int main() {
             cout << "E = " << e3 << endl;
 
         } else if (i == 2) {
-            cout << i;
+            int a, b, p,m=0;
+            cout << "Ingrese valor P -> ";
+            cin >> p;
+            cout << "Ingrese valor A -> ";
+            cin >> a;
+            cout << "Ingrese valor B -> ";
+            cin >> b;
+            for (int i = 0; i < p; i++) {
+                m += a / b;
+                cout << m;
+                b--;
+            }
+            cout << "M =" << m;
         }
     } while (i != 0);
 }
