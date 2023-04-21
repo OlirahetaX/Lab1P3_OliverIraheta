@@ -5,63 +5,66 @@
 using namespace std;
 
 int main() {
-    int i;
-    do {
-        cout << "------------ Lab1P3_Oliver_Iraheta ----------------" << endl << "0. Salir      1. Error numerico       2. Division en 2 entradas\n" ;
-        cin >> i;
-        if (i == 1) {
-            int n;
-            double x1, s1=0.0, e1;
-            float x2, s2=0.0f, e2;
-            long double x3, s3=0.0, e3;
-         
-            cout << "Ingrese valor N -> ";
-            cin >> n;
+	int i;
+	do {
+		cout << "------------ Lab1P3_Oliver_Iraheta ----------------" << endl << "0. Salir      1. Error numerico       2. Division en 2 entradas\n";
+		cin >> i;
+		if (i == 1) {
+			int n;
+			double x1, s1 = 0.0, e1;
+			float x2, s2 = 0.0f, e2;
+			long double x3, s3 = 0.0, e3;
 
-            x1 = 1.0 / n;
-            x2 = 1.0 / n;
-            x3 = 1.0 / n;
+			cout << "Ingrese valor N -> ";
+			cin >> n;
 
-            for (int i = 0; i < n; i++) {
-                s1 += x1;
-                s2 += x2;
-                s3 += x3;
-            }
+			x1 = 1.0 / (double)n;
+			x2 = 1.0 / (float)n;
+			x3 = 1.0 / (long double)n;
 
-            e1 = 1 - s1;
-            e2 = 1 - s2;
-            e3 = 1 - s3;
-            
-            if (e1 < 0) {
-                e1 *= -1;
-            }if (e2 < 0) {
-                e2 *= -1;
-            }if (e3 < 0) {
-                e3 *= -1;
-            }
-            cout << "Usando el double: \n";
-            cout << "E = " << e1 << endl;
-            cout << "Usando el float: \n";
-            cout << "E = " << e2 << endl;
-            cout << "Usando el long double: \n";
-            cout << "E = " << e3 << endl;
+			for (int i = 0; i < n; i++) {
+				s1 += x1;
+				s2 += x2;
+				s3 += x3;
+			}
 
-        } else if (i == 2) {
-            int a, b, p,m=0;
-            cout << "Ingrese valor P -> ";
-            cin >> p;
-            cout << "Ingrese valor A -> ";
-            cin >> a;
-            cout << "Ingrese valor B -> ";
-            cin >> b;
-            for (int i = 0; i < p; i++) {
-                m += a / b;
-                cout << m;
-                b--;
-            }
-            cout << "M =" << m;
-        }
-    } while (i != 0);
+			e1 = 1 - s1;
+			e2 = 1 - s2;
+			e3 = 1 - s3;
+
+			if (e1 < 0) {
+				e1 *= -1;
+			}if (e2 < 0) {
+				e2 *= -1;
+			}if (e3 < 0) {
+				e3 *= -1;
+			}
+			cout << "Usando el double: \n";
+			cout << "E = " << e1 << endl;
+			cout << "Usando el float: \n";
+			cout << "E = " << e2 << endl;
+			cout << "Usando el long double: \n";
+			cout << "E = " << e3 << endl;
+
+		}
+		else if (i == 2) {
+			int a, b, p, m = 0;
+			cout << "Ingrese valor P -> ";
+			cin >> p;
+			cout << "Ingrese valor A -> ";
+			cin >> a;
+			cout << "Ingrese valor B -> ";
+			cin >> b;
+			for (int i = 0; i < p; i++) {
+				if (b > 0) {
+					m += a / b;
+					//cout << "--" << m << endl;
+					b--;
+				}				
+			}
+			cout << "M = " << m << endl;
+		}
+	} while (i != 0);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
