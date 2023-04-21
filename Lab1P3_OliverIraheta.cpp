@@ -5,7 +5,44 @@
 using namespace std;
 
 int main() {
-    cout << "Hello World!\n";
+    int i;
+    do {
+        cout << "------------ Lab1P3_Oliver_Iraheta ----------------" << endl << "0. Salir      1. Error numerico       2. Division en 2 entradas\n" ;
+        cin >> i;
+        if (i == 1) {
+            int n;
+            double x1, s1=0.0, e1;
+            float x2, s2=0.0, e2;
+            long double x3, s3=0.0, e3;
+         
+            cout << "Ingrese valor N -> ";
+            cin >> n;
+
+            x1 = 1.0 / n;
+            x2 = 1.0 / n;
+            x3 = 1.0 / n;
+
+            for (int i = 0; i < n; i++) {
+                s1 += x1;
+                s2 += x2;
+                s3 += x3;
+            }
+
+            e1 = 1 - s1;
+            e2 = 1 - s2;
+            e3 = 1 - s3;
+            
+            cout << "Usando el double: \n";
+            cout << "E = " << e1 << endl;
+            cout << "Usando el float: \n";
+            cout << "E = " << e2 << endl;
+            cout << "Usando el long double: \n";
+            cout << "E = " << e3 << endl;
+
+        } else if (i == 2) {
+            cout << i;
+        }
+    } while (i != 0);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
